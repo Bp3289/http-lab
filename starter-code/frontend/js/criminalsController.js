@@ -11,7 +11,7 @@ context.all = [];
 context.addCriminal = addCriminal;
 context.newCriminal = {};
 context.getCriminals = getCriminals;
-// context.deleteCriminals = deleteCriminals;
+context.deleteCriminals = deleteCriminals;
 
 
 getCriminals();
@@ -33,4 +33,18 @@ function addCriminal(){
 	context.newCriminal = {};
 }
 
+
+	//DELETE
+	function deleteCriminals(criminal) {
+		console.log("delete button clicked");
+
+		  $http
+		  .delete('http://localhost:3000/criminals/' + criminal._id)
+		  .then(function(response){
+		  	console.log(response);
+		  	var index = context.all.indexOf(criminal);
+		  	context.all.splice(index, 1);
+		  });
+		
+	}
 }

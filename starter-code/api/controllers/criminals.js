@@ -68,4 +68,4 @@ module.exports = {
   getCriminal: getCriminal,
   updateCriminal: updateCriminal,
   removeCriminal: removeCriminal
-}
+};
